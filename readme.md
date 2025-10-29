@@ -8,7 +8,6 @@ The environment used for this example is **OpenShift SNO 4.19.16 (bare metal)** 
 Although the 3090 is a consumer GPU, it provides sufficient capability for validation and testing GPU functionality in OpenShift.
 
 As part of this walkthrough, we will deploy and run the **ibm-granite/granite-3.1-8b-instruct** model from Hugging Face.
-**granite-3.1-8b-instruct** is a state-of-the-art open LLM designed by Google for instruction-tuned tasks such as text generation and conversational applications.
 This example demonstrates how to pull, configure, and serve a Hugging Face model on OpenShift using GPU acceleration.
 
 ---
@@ -171,6 +170,7 @@ curl -s -w '\nTOTAL_TIME=%{time_total}\n' \
     }
   }'
 ```
+
 
 
 
