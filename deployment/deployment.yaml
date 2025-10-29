@@ -1,20 +1,20 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: gemma3
+  name: granite
   namespace: rhaiis
   labels:
-    app: gemma3
+    app: granite
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: gemma3
+      app: granite
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: gemma3
+        app: granite
     spec:
       restartPolicy: Always
       initContainers:
@@ -41,7 +41,7 @@ spec:
               set -euxo pipefail
               if [ -z "$(ls -A /model 2>/dev/null || true)" ]; then
                 echo "Pulling model to /model ..."
-                oras pull google/gemma-3-27b-it \
+                oras pull registry.redhat.io/rhelai1/granite-3-1-8b-instruct-quantized-w8a8:1.5 \
                   --output /model
                 echo "Model pulled."
               else
@@ -61,7 +61,7 @@ spec:
               cpu: '2'
               memory: 6Gi
               nvidia.com/gpu: '1'
-          name: gemma3
+          name: granite
           command:
             - python
             - '-m'
@@ -83,7 +83,7 @@ spec:
           args:
             - '--port=8000'
             - '--model=/model'
-            - '--served-model-name=google/gemma-3-27b-it'
+            - '--served-model-name=granite-3-1-8b-instruct-quantized-w8a8'
             - '--tensor-parallel-size=1'
             - '--dtype=half'
             - '--max-model-len=65536'
@@ -101,4 +101,5 @@ spec:
             secretName: rh-registry
             items:
               - key: .dockerconfigjson
+
                 path: config.json
