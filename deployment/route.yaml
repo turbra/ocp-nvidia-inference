@@ -1,17 +1,18 @@
 apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
-  name: gemma3
+  name: granite
   namespace: rhaiis
   labels:
-    app: gemma3
+    app: granite
 spec:
   to:
     kind: Service
-    name: gemma3
+    name: granite
     weight: 100
   port:
     targetPort: http
   tls:
     termination: edge
+
     insecureEdgeTerminationPolicy: Allow
