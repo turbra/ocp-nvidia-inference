@@ -105,7 +105,7 @@ oc exec -it -n nvidia-gpu-operator nvidia-driver-daemonset-<replace> -- nvidia-s
    2. Set the cluster namespace to match where you deployed the Red Hat AI Inference Server image, for example:
 
       ```bash
-      $ NAMESPACE=rhaiis-namespace
+      $ NAMESPACE=rhaiis
       ```
 
    3. Create the `Secret` CR in the cluster:
@@ -119,7 +119,7 @@ oc exec -it -n nvidia-gpu-operator nvidia-driver-daemonset-<replace> -- nvidia-s
    For example, to create a `Secret` CR that contains the contents of your local `~/.docker/config.json` file, run:
 
    ```bash
-   oc create secret generic docker-secret --from-file=.dockercfg=$HOME/.docker/config.json --type=kubernetes.io/dockercfg -n rhaiis-namespace
+   oc create secret generic docker-secret --from-file=.dockercfg=$HOME/.docker/config.json --type=kubernetes.io/dockercfg -n rhaiis
    ```
 
 ---
@@ -171,5 +171,6 @@ curl -s -w '\nTOTAL_TIME=%{time_total}\n' \
     }
   }'
 ```
+
 
 
