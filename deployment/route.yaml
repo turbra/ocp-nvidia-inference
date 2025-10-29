@@ -1,0 +1,17 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: gemma3
+  namespace: rhaiis
+  labels:
+    app: gemma3
+spec:
+  to:
+    kind: Service
+    name: gemma3
+    weight: 100
+  port:
+    targetPort: http
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Allow

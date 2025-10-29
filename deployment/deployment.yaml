@@ -1,0 +1,104 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: gemma3
+  namespace: rhaiis
+  labels:
+    app: gemma3
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gemma3
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: gemma3
+    spec:
+      restartPolicy: Always
+      initContainers:
+        - resources: {}
+          terminationMessagePath: /dev/termination-log
+          name: fetch-model
+          command:
+            - /bin/sh
+            - '-c'
+          env:
+            - name: DOCKER_CONFIG
+              value: /auth
+          imagePullPolicy: IfNotPresent
+          volumeMounts:
+            - name: model-volume
+              mountPath: /model
+            - name: oci-auth
+              readOnly: true
+              mountPath: /auth
+          terminationMessagePolicy: File
+          image: 'ghcr.io/oras-project/oras:v1.2.0'
+          args:
+            - |
+              set -euxo pipefail
+              if [ -z "$(ls -A /model 2>/dev/null || true)" ]; then
+                echo "Pulling model to /model ..."
+                oras pull google/gemma-3-27b-it \
+                  --output /model
+                echo "Model pulled."
+              else
+                echo "Model already present, skipping pull."
+              fi
+              # show what we have for debugging
+              ls -lah /model
+      imagePullSecrets:
+        - name: rh-registry
+      containers:
+        - resources:
+            limits:
+              cpu: '10'
+              memory: 16Gi
+              nvidia.com/gpu: '1'
+            requests:
+              cpu: '2'
+              memory: 6Gi
+              nvidia.com/gpu: '1'
+          name: gemma3
+          command:
+            - python
+            - '-m'
+            - vllm.entrypoints.openai.api_server
+          env:
+            - name: HOME
+              value: /tmp
+            - name: XDG_CACHE_HOME
+              value: /tmp/.cache
+            - name: VLLM_SERVER_DEV_MODE
+              value: '1'
+          imagePullPolicy: IfNotPresent
+          volumeMounts:
+            - name: model-volume
+              mountPath: /model
+            - name: shm
+              mountPath: /dev/shm
+          image: 'registry.redhat.io/rhaiis/vllm-cuda-rhel9:3.0.0'
+          args:
+            - '--port=8000'
+            - '--model=/model'
+            - '--served-model-name=google/gemma-3-27b-it'
+            - '--tensor-parallel-size=1'
+            - '--dtype=half'
+            - '--max-model-len=65536'
+            - '--gpu-memory-utilization=0.95'
+      volumes:
+        - name: model-volume
+          persistentVolumeClaim:
+            claimName: model-cache
+        - name: shm
+          emptyDir:
+            medium: Memory
+            sizeLimit: 2Gi
+        - name: oci-auth
+          secret:
+            secretName: rh-registry
+            items:
+              - key: .dockerconfigjson
+                path: config.json
