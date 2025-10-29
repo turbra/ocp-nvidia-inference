@@ -85,7 +85,7 @@ spec:
             - '--model=/model'
             - '--served-model-name=granite-3-1-8b-instruct-quantized-w8a8'
             - '--tensor-parallel-size=1'
-            - '--dtype=half'
+            - '--dtype=auto'
             - '--max-model-len=65536'
             - '--gpu-memory-utilization=0.95'
       volumes:
@@ -103,3 +103,4 @@ spec:
               - key: .dockerconfigjson
 
                 path: config.json
+
