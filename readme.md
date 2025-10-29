@@ -7,8 +7,8 @@ This guide demonstrates how to enable and utilize an NVIDIA GPU on an OpenShift 
 The environment used for this example is **OpenShift SNO 4.19.16 (bare metal)** with an **NVIDIA GeForce RTX 3090**.
 Although the 3090 is a consumer GPU, it provides sufficient capability for validation and testing GPU functionality in OpenShift.
 
-As part of this walkthrough, we will deploy and run the **[`google/gemma-3-27b-it`](https://huggingface.co/google/gemma-3-27b-it)** model from Hugging Face.
-Gemma 3 27B Instruct is a state-of-the-art open LLM designed by Google for instruction-tuned tasks such as text generation and conversational applications.
+As part of this walkthrough, we will deploy and run the **ibm-granite/granite-3.1-8b-instruct** model from Hugging Face.
+**granite-3.1-8b-instruct** is a state-of-the-art open LLM designed by Google for instruction-tuned tasks such as text generation and conversational applications.
 This example demonstrates how to pull, configure, and serve a Hugging Face model on OpenShift using GPU acceleration.
 
 ---
@@ -132,7 +132,7 @@ oc exec -it -n nvidia-gpu-operator nvidia-driver-daemonset-<replace> -- nvidia-s
 curl -X POST http://rhaiis.apps.ocp4.example.com/v1/chat/completions \
   -H "Content-Type: application/json" \
   -d '{
-    "model": "google/gemma-3-27b-it",
+    "model": "granite-3-1-8b-instruct-quantized-w8a8",
     "messages": [{"role": "user", "content": "What is AI?"}],
     "temperature": 0.1
   }'
@@ -145,7 +145,7 @@ PROMPT='Explain SIMD in one concise paragraph.'
 curl -s -w '\nTOTAL_TIME=%{time_total}\n' \
   -H 'Content-Type: application/json' \
   -d "{
-    \"model\":\"google/gemma-3-27b-it\",
+    \"model\":\"granite-3-1-8b-instruct-quantized-w8a8\",
     \"messages\":[{\"role\":\"user\",\"content\":\"$PROMPT\"}],
     \"temperature\":0.0,
     \"top_p\":1.0,
@@ -171,6 +171,7 @@ curl -s -w '\nTOTAL_TIME=%{time_total}\n' \
     }
   }'
 ```
+
 
 
 
