@@ -1,6 +1,8 @@
 # OpenShift Node Feature Discovery and NVIDIA GPU Operator Deployment
 ### [Deploying Red Hat AI Inference Server](https://docs.redhat.com/en/documentation/red_hat_ai_inference_server/3.2/html-single/deploying_red_hat_ai_inference_server_in_openshift_container_platform/index#idm140531502886512)
 
+---
+
 This guide demonstrates how to enable and utilize an NVIDIA GPU on an OpenShift cluster.
 The environment used for this example is **OpenShift SNO 4.19.16 (bare metal)** with an **NVIDIA GeForce RTX 3090**.
 Although the 3090 is a consumer GPU, it provides sufficient capability for validation and testing GPU functionality in OpenShift.
@@ -8,6 +10,7 @@ Although the 3090 is a consumer GPU, it provides sufficient capability for valid
 As part of this walkthrough, we will deploy and run the **[`google/gemma-3-27b-it`](https://huggingface.co/google/gemma-3-27b-it)** model from Hugging Face.
 Gemma 3 27B Instruct is a state-of-the-art open LLM designed by Google for instruction-tuned tasks such as text generation and conversational applications.
 This example demonstrates how to pull, configure, and serve a Hugging Face model on OpenShift using GPU acceleration.
+
 ---
 
 # Quick Steps
@@ -168,4 +171,5 @@ curl -s -w '\nTOTAL_TIME=%{time_total}\n' \
     }
   }'
 ```
+
 
