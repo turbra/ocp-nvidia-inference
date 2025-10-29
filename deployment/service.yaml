@@ -1,15 +1,16 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: gemma3
+  name: granite
   namespace: rhaiis
   labels:
-    app: gemma3
+    app: granite
 spec:
   selector:
-    app: gemma3
+    app: granite
   ports:
     - name: http
       port: 8000
       targetPort: 8000
+
   type: ClusterIP
