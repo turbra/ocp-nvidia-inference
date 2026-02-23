@@ -1,7 +1,4 @@
 # OpenShift Node Feature Discovery and NVIDIA GPU Operator Deployment
-### [Deploying Red Hat AI Inference Server](https://docs.redhat.com/en/documentation/red_hat_ai_inference_server/3.2/html-single/deploying_red_hat_ai_inference_server_in_openshift_container_platform/index#idm140531502886512)
-
----
 
 This guide demonstrates how to enable and utilize an NVIDIA GPU on an OpenShift cluster.
 The environment used for this example is **OpenShift SNO 4.19.16 (bare metal)** with an **NVIDIA GeForce RTX 3090**.
@@ -9,6 +6,17 @@ Although the 3090 is a consumer GPU, it provides sufficient capability for valid
 
 As part of this walkthrough, we will deploy and run the **ibm-granite/granite-3.1-8b-instruct** model from Hugging Face.
 This example demonstrates how to pull, configure, and serve a Hugging Face model on OpenShift using GPU acceleration.
+
+---
+### Helpful Links
+
+#### [Deploying Red Hat AI Inference Server](https://docs.redhat.com/en/documentation/red_hat_ai_inference_server/3.2/html-single/deploying_red_hat_ai_inference_server_in_openshift_container_platform/index#idm140531502886512)
+
+#### [Deploying a Grafana metrics dashboard](https://docs.redhat.com/en/documentation/red_hat_openshift_ai_self-managed/2.25/html/managing_and_monitoring_models/managing_and_monitoring_models_on_the_single_model_serving_platform#Deploying-a-grafana-metrics-dashboard_cluster-admin)
+
+#### [Deploying a vLLM/GPU metrics dashboard on a Grafana instance](https://docs.redhat.com/en/documentation/red_hat_openshift_ai_self-managed/2.25/html/managing_and_monitoring_models/managing_and_monitoring_models_on_the_single_model_serving_platform#deploying-vllm-gpu-metrics-dashboard-grafana_cluster-admin)
+
+#### [RHOAI Metrics Dashboard for Single Serving Models](https://github.com/rh-aiservices-bu/rhoai-uwm/tree/main)
 
 ---
 
@@ -170,6 +178,7 @@ curl -s -w '\nTOTAL_TIME=%{time_total}\n' \
     }
   }'
 ```
+
 
 
 
