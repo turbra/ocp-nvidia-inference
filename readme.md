@@ -105,7 +105,7 @@ oc exec -it -n nvidia-gpu-operator nvidia-driver-daemonset-<replace> -- nvidia-s
 1. **Create the `Secret` custom resource (CR) for the Hugging Face token**
    The cluster uses the `Secret` CR to pull models from Hugging Face.
 
-   1. Set the `HF_TOKEN` variable using the token you set in [Hugging Face](https://huggingface.co/settings/tokens):
+   1. Set the `HF_TOKEN` variable using the token you set in [Hugging Face](https://huggingface.co/docs/hub/en/security-tokens)
 
       ```bash
       $ HF_TOKEN=<your_huggingface_token>
@@ -180,6 +180,7 @@ curl -s -w '\nTOTAL_TIME=%{time_total}\n' \
     }
   }'
 ```
+
 
 
 
