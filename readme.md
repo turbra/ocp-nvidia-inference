@@ -18,6 +18,8 @@ This example demonstrates how to pull, configure, and serve a Hugging Face model
 
 #### [RHOAI Metrics Dashboard for Single Serving Models](https://github.com/rh-aiservices-bu/rhoai-uwm/tree/main)
 
+####  [Red Hat AI - Hugging Face](https://huggingface.co/RedHatAI)
+
 ---
 
 # Quick Steps
@@ -178,6 +180,7 @@ curl -s -w '\nTOTAL_TIME=%{time_total}\n' \
     }
   }'
 ```
+
 
 
 
