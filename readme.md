@@ -18,6 +18,8 @@ This example demonstrates how to pull, configure, and serve a Hugging Face model
 
 #### [RHOAI Metrics Dashboard for Single Serving Models](https://github.com/rh-aiservices-bu/rhoai-uwm/tree/main)
 
+#### [Enabling the GPU Monitoring Dashboard](https://docs.nvidia.com/datacenter/cloud-native/openshift/latest/enable-gpu-monitoring-dashboard.html)
+
 ####  [Red Hat AI - Hugging Face](https://huggingface.co/RedHatAI)
 
 ---
