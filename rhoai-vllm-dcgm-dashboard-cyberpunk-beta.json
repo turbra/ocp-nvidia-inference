@@ -9,7 +9,7 @@
         },
         "enable": true,
         "hide": true,
-        "iconColor": "rgba(255, 43, 214, 1)",
+        "iconColor": "rgba(0, 211, 255, 1)",
         "name": "Annotations & Alerts",
         "target": {
           "limit": 100,
@@ -21,10 +21,10 @@
       }
     ]
   },
-  "description": "Beta visual variant of the RHOAI vLLM + NVIDIA DCGM dashboard. PromQL queries are unchanged from the source dashboard; styling uses neon cyberpunk-inspired colors.",
+  "description": "Cyberpunk Ultra Beta sibling dashboard. Metric queries are derived from the combined RHOAI vLLM and NVIDIA DCGM dashboard.",
   "editable": true,
   "fiscalYearStartMonth": 0,
-  "graphTooltip": 1,
+  "graphTooltip": 0,
   "id": null,
   "links": [],
   "panels": [
@@ -38,9 +38,8 @@
       },
       "id": 902,
       "panels": [],
-      "title": "Hardware Stats",
-      "type": "row",
-      "transparent": true
+      "title": "NEON HARDWARE TELEMETRY",
+      "type": "row"
     },
     {
       "datasource": {
@@ -55,7 +54,7 @@
           "custom": {
             "align": "auto",
             "cellOptions": {
-              "type": "auto"
+              "type": "color-text"
             },
             "filterable": false,
             "inspect": false,
@@ -170,8 +169,8 @@
       },
       "id": 301,
       "options": {
-        "minVizHeight": 60,
-        "minVizWidth": 60,
+        "minVizHeight": 44,
+        "minVizWidth": 44,
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
@@ -234,8 +233,8 @@
       },
       "id": 302,
       "options": {
-        "minVizHeight": 60,
-        "minVizWidth": 60,
+        "minVizHeight": 44,
+        "minVizWidth": 44,
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
@@ -307,8 +306,8 @@
       },
       "id": 304,
       "options": {
-        "minVizHeight": 60,
-        "minVizWidth": 60,
+        "minVizHeight": 44,
+        "minVizWidth": 44,
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
@@ -380,7 +379,7 @@
       },
       "id": 303,
       "options": {
-        "colorMode": "value",
+        "colorMode": "background",
         "graphMode": "none",
         "justifyMode": "auto",
         "orientation": "auto",
@@ -424,9 +423,9 @@
             "mode": "palette-classic"
           },
           "custom": {
-            "axisBorderShow": false,
+            "axisBorderShow": true,
             "axisCenteredZero": false,
-            "axisColorMode": "text",
+            "axisColorMode": "series",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
@@ -439,9 +438,9 @@
               "viz": false
             },
             "insertNulls": false,
-            "lineInterpolation": "linear",
-            "lineWidth": 2,
-            "pointSize": 4,
+            "lineInterpolation": "smooth",
+            "lineWidth": 3,
+            "pointSize": 5,
             "scaleDistribution": {
               "type": "linear"
             },
@@ -479,19 +478,18 @@
       "options": {
         "legend": {
           "calcs": [
-            "min",
+            "lastNotNull",
             "mean",
-            "max",
-            "lastNotNull"
+            "max"
           ],
           "displayMode": "table",
           "placement": "bottom",
           "showLegend": true
         },
         "tooltip": {
-          "hideZeros": false,
           "mode": "multi",
-          "sort": "none"
+          "sort": "none",
+          "hideZeros": false
         }
       },
       "targets": [
@@ -544,9 +542,9 @@
             "mode": "palette-classic"
           },
           "custom": {
-            "axisBorderShow": false,
+            "axisBorderShow": true,
             "axisCenteredZero": false,
-            "axisColorMode": "text",
+            "axisColorMode": "series",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
@@ -559,9 +557,9 @@
               "viz": false
             },
             "insertNulls": false,
-            "lineInterpolation": "linear",
-            "lineWidth": 2,
-            "pointSize": 4,
+            "lineInterpolation": "smooth",
+            "lineWidth": 3,
+            "pointSize": 5,
             "scaleDistribution": {
               "type": "linear"
             },
@@ -599,19 +597,18 @@
       "options": {
         "legend": {
           "calcs": [
-            "min",
+            "lastNotNull",
             "mean",
-            "max",
-            "lastNotNull"
+            "max"
           ],
           "displayMode": "table",
           "placement": "bottom",
           "showLegend": true
         },
         "tooltip": {
-          "hideZeros": false,
           "mode": "multi",
-          "sort": "none"
+          "sort": "none",
+          "hideZeros": false
         }
       },
       "targets": [
@@ -642,9 +639,9 @@
             "mode": "palette-classic"
           },
           "custom": {
-            "axisBorderShow": false,
+            "axisBorderShow": true,
             "axisCenteredZero": false,
-            "axisColorMode": "text",
+            "axisColorMode": "series",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
@@ -657,9 +654,9 @@
               "viz": false
             },
             "insertNulls": false,
-            "lineInterpolation": "linear",
-            "lineWidth": 2,
-            "pointSize": 4,
+            "lineInterpolation": "smooth",
+            "lineWidth": 3,
+            "pointSize": 5,
             "scaleDistribution": {
               "type": "linear"
             },
@@ -697,19 +694,18 @@
       "options": {
         "legend": {
           "calcs": [
-            "min",
+            "lastNotNull",
             "mean",
-            "max",
-            "lastNotNull"
+            "max"
           ],
           "displayMode": "table",
           "placement": "bottom",
           "showLegend": true
         },
         "tooltip": {
-          "hideZeros": false,
           "mode": "multi",
-          "sort": "none"
+          "sort": "none",
+          "hideZeros": false
         }
       },
       "targets": [
@@ -740,9 +736,9 @@
             "mode": "palette-classic"
           },
           "custom": {
-            "axisBorderShow": false,
+            "axisBorderShow": true,
             "axisCenteredZero": false,
-            "axisColorMode": "text",
+            "axisColorMode": "series",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
@@ -755,9 +751,9 @@
               "viz": false
             },
             "insertNulls": false,
-            "lineInterpolation": "linear",
-            "lineWidth": 2,
-            "pointSize": 4,
+            "lineInterpolation": "smooth",
+            "lineWidth": 3,
+            "pointSize": 5,
             "scaleDistribution": {
               "type": "linear"
             },
@@ -795,19 +791,18 @@
       "options": {
         "legend": {
           "calcs": [
-            "min",
+            "lastNotNull",
             "mean",
-            "max",
-            "lastNotNull"
+            "max"
           ],
           "displayMode": "table",
           "placement": "bottom",
           "showLegend": true
         },
         "tooltip": {
-          "hideZeros": false,
           "mode": "multi",
-          "sort": "none"
+          "sort": "none",
+          "hideZeros": false
         }
       },
       "targets": [
@@ -838,9 +833,9 @@
             "mode": "palette-classic"
           },
           "custom": {
-            "axisBorderShow": false,
+            "axisBorderShow": true,
             "axisCenteredZero": false,
-            "axisColorMode": "text",
+            "axisColorMode": "series",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
@@ -853,9 +848,9 @@
               "viz": false
             },
             "insertNulls": false,
-            "lineInterpolation": "linear",
-            "lineWidth": 2,
-            "pointSize": 4,
+            "lineInterpolation": "smooth",
+            "lineWidth": 3,
+            "pointSize": 5,
             "scaleDistribution": {
               "type": "linear"
             },
@@ -893,19 +888,18 @@
       "options": {
         "legend": {
           "calcs": [
-            "min",
+            "lastNotNull",
             "mean",
-            "max",
-            "lastNotNull"
+            "max"
           ],
           "displayMode": "table",
           "placement": "bottom",
           "showLegend": true
         },
         "tooltip": {
-          "hideZeros": false,
           "mode": "multi",
-          "sort": "none"
+          "sort": "none",
+          "hideZeros": false
         }
       },
       "targets": [
@@ -955,7 +949,7 @@
                 "value": null
               },
               {
-                "color": "#FFD166",
+                "color": "#FF3B6B",
                 "value": 1
               }
             ]
@@ -972,7 +966,7 @@
       },
       "id": 310,
       "options": {
-        "colorMode": "value",
+        "colorMode": "background",
         "graphMode": "none",
         "justifyMode": "auto",
         "orientation": "auto",
@@ -1045,7 +1039,7 @@
       },
       "id": 311,
       "options": {
-        "colorMode": "value",
+        "colorMode": "background",
         "graphMode": "none",
         "justifyMode": "auto",
         "orientation": "auto",
@@ -1119,7 +1113,7 @@
       },
       "id": 312,
       "options": {
-        "colorMode": "value",
+        "colorMode": "background",
         "graphMode": "none",
         "justifyMode": "auto",
         "orientation": "auto",
@@ -1162,9 +1156,8 @@
       },
       "id": 900,
       "panels": [],
-      "title": "vLLM Model Metrics",
-      "type": "row",
-      "transparent": true
+      "title": "MODEL RUNTIME PULSE",
+      "type": "row"
     },
     {
       "datasource": {
@@ -1178,9 +1171,9 @@
             "mode": "palette-classic"
           },
           "custom": {
-            "axisBorderShow": false,
+            "axisBorderShow": true,
             "axisCenteredZero": false,
-            "axisColorMode": "text",
+            "axisColorMode": "series",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
@@ -1193,9 +1186,9 @@
               "viz": false
             },
             "insertNulls": false,
-            "lineInterpolation": "linear",
-            "lineWidth": 2,
-            "pointSize": 4,
+            "lineInterpolation": "smooth",
+            "lineWidth": 3,
+            "pointSize": 5,
             "scaleDistribution": {
               "type": "linear"
             },
@@ -1235,14 +1228,19 @@
       "id": 114,
       "options": {
         "legend": {
-          "calcs": [],
+          "calcs": [
+            "lastNotNull",
+            "mean",
+            "max"
+          ],
           "displayMode": "table",
           "placement": "bottom",
           "showLegend": true
         },
         "tooltip": {
           "mode": "multi",
-          "sort": "none"
+          "sort": "none",
+          "hideZeros": false
         }
       },
       "targets": [
@@ -1280,9 +1278,9 @@
             "mode": "palette-classic"
           },
           "custom": {
-            "axisBorderShow": false,
+            "axisBorderShow": true,
             "axisCenteredZero": false,
-            "axisColorMode": "text",
+            "axisColorMode": "series",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
@@ -1295,9 +1293,9 @@
               "viz": false
             },
             "insertNulls": false,
-            "lineInterpolation": "linear",
-            "lineWidth": 2,
-            "pointSize": 4,
+            "lineInterpolation": "smooth",
+            "lineWidth": 3,
+            "pointSize": 5,
             "scaleDistribution": {
               "type": "linear"
             },
@@ -1337,14 +1335,19 @@
       "id": 108,
       "options": {
         "legend": {
-          "calcs": [],
+          "calcs": [
+            "lastNotNull",
+            "mean",
+            "max"
+          ],
           "displayMode": "table",
           "placement": "bottom",
           "showLegend": true
         },
         "tooltip": {
           "mode": "multi",
-          "sort": "none"
+          "sort": "none",
+          "hideZeros": false
         }
       },
       "targets": [
@@ -1381,9 +1384,9 @@
             "mode": "palette-classic"
           },
           "custom": {
-            "axisBorderShow": false,
+            "axisBorderShow": true,
             "axisCenteredZero": false,
-            "axisColorMode": "text",
+            "axisColorMode": "series",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
@@ -1396,9 +1399,9 @@
               "viz": false
             },
             "insertNulls": false,
-            "lineInterpolation": "linear",
-            "lineWidth": 2,
-            "pointSize": 4,
+            "lineInterpolation": "smooth",
+            "lineWidth": 3,
+            "pointSize": 5,
             "scaleDistribution": {
               "type": "linear"
             },
@@ -1439,14 +1442,19 @@
       "id": 109,
       "options": {
         "legend": {
-          "calcs": [],
+          "calcs": [
+            "lastNotNull",
+            "mean",
+            "max"
+          ],
           "displayMode": "table",
           "placement": "bottom",
           "showLegend": true
         },
         "tooltip": {
           "mode": "multi",
-          "sort": "none"
+          "sort": "none",
+          "hideZeros": false
         }
       },
       "targets": [
@@ -1547,9 +1555,9 @@
             "mode": "palette-classic"
           },
           "custom": {
-            "axisBorderShow": false,
+            "axisBorderShow": true,
             "axisCenteredZero": false,
-            "axisColorMode": "text",
+            "axisColorMode": "series",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
@@ -1562,9 +1570,9 @@
               "viz": false
             },
             "insertNulls": false,
-            "lineInterpolation": "linear",
-            "lineWidth": 2,
-            "pointSize": 4,
+            "lineInterpolation": "smooth",
+            "lineWidth": 3,
+            "pointSize": 5,
             "scaleDistribution": {
               "type": "linear"
             },
@@ -1605,14 +1613,19 @@
       "id": 103,
       "options": {
         "legend": {
-          "calcs": [],
+          "calcs": [
+            "lastNotNull",
+            "mean",
+            "max"
+          ],
           "displayMode": "table",
           "placement": "bottom",
           "showLegend": true
         },
         "tooltip": {
           "mode": "multi",
-          "sort": "none"
+          "sort": "none",
+          "hideZeros": false
         }
       },
       "targets": [
@@ -1661,7 +1674,15 @@
               "type": "linear"
             }
           },
-          "mappings": []
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#00F5FF",
+                "value": null
+              }
+            ]
+          }
         },
         "overrides": []
       },
@@ -1674,22 +1695,22 @@
       "id": 112,
       "options": {
         "calculate": false,
-        "cellGap": 1,
+        "cellGap": 2,
         "cellValues": {
           "unit": "none"
         },
         "color": {
           "exponent": 0.5,
-          "fill": "#00F5FF",
+          "fill": "dark-orange",
           "min": 0,
           "mode": "scheme",
           "reverse": false,
           "scale": "exponential",
-          "scheme": "Plasma",
+          "scheme": "Magma",
           "steps": 64
         },
         "exemplars": {
-          "color": "rgba(255, 43, 214, 0.8)"
+          "color": "rgba(255,43,214,0.85)"
         },
         "filterValues": {
           "le": 1e-09
@@ -1755,7 +1776,15 @@
               "type": "linear"
             }
           },
-          "mappings": []
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#00F5FF",
+                "value": null
+              }
+            ]
+          }
         },
         "overrides": []
       },
@@ -1768,22 +1797,22 @@
       "id": 113,
       "options": {
         "calculate": false,
-        "cellGap": 1,
+        "cellGap": 2,
         "cellValues": {
           "unit": "none"
         },
         "color": {
           "exponent": 0.5,
-          "fill": "#00F5FF",
+          "fill": "dark-orange",
           "min": 0,
           "mode": "scheme",
           "reverse": false,
           "scale": "exponential",
-          "scheme": "Plasma",
+          "scheme": "Magma",
           "steps": 64
         },
         "exemplars": {
-          "color": "rgba(255, 43, 214, 0.8)"
+          "color": "rgba(255,43,214,0.85)"
         },
         "filterValues": {
           "le": 1e-09
@@ -1843,9 +1872,9 @@
             "mode": "palette-classic"
           },
           "custom": {
-            "axisBorderShow": false,
+            "axisBorderShow": true,
             "axisCenteredZero": false,
-            "axisColorMode": "text",
+            "axisColorMode": "series",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
@@ -1858,9 +1887,9 @@
               "viz": false
             },
             "insertNulls": false,
-            "lineInterpolation": "linear",
-            "lineWidth": 2,
-            "pointSize": 4,
+            "lineInterpolation": "smooth",
+            "lineWidth": 3,
+            "pointSize": 5,
             "scaleDistribution": {
               "type": "linear"
             },
@@ -1900,14 +1929,19 @@
       "id": 111,
       "options": {
         "legend": {
-          "calcs": [],
+          "calcs": [
+            "lastNotNull",
+            "mean",
+            "max"
+          ],
           "displayMode": "table",
           "placement": "bottom",
           "showLegend": true
         },
         "tooltip": {
           "mode": "multi",
-          "sort": "none"
+          "sort": "none",
+          "hideZeros": false
         }
       },
       "targets": [
@@ -1945,9 +1979,9 @@
             "mode": "palette-classic"
           },
           "custom": {
-            "axisBorderShow": false,
+            "axisBorderShow": true,
             "axisCenteredZero": false,
-            "axisColorMode": "text",
+            "axisColorMode": "series",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
@@ -1960,9 +1994,9 @@
               "viz": false
             },
             "insertNulls": false,
-            "lineInterpolation": "linear",
-            "lineWidth": 2,
-            "pointSize": 4,
+            "lineInterpolation": "smooth",
+            "lineWidth": 3,
+            "pointSize": 5,
             "scaleDistribution": {
               "type": "linear"
             },
@@ -2003,14 +2037,19 @@
       "id": 104,
       "options": {
         "legend": {
-          "calcs": [],
+          "calcs": [
+            "lastNotNull",
+            "mean",
+            "max"
+          ],
           "displayMode": "table",
           "placement": "bottom",
           "showLegend": true
         },
         "tooltip": {
           "mode": "multi",
-          "sort": "none"
+          "sort": "none",
+          "hideZeros": false
         }
       },
       "targets": [
@@ -2042,9 +2081,9 @@
             "mode": "palette-classic"
           },
           "custom": {
-            "axisBorderShow": false,
+            "axisBorderShow": true,
             "axisCenteredZero": false,
-            "axisColorMode": "text",
+            "axisColorMode": "series",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
@@ -2057,9 +2096,9 @@
               "viz": false
             },
             "insertNulls": false,
-            "lineInterpolation": "linear",
-            "lineWidth": 2,
-            "pointSize": 4,
+            "lineInterpolation": "smooth",
+            "lineWidth": 3,
+            "pointSize": 5,
             "scaleDistribution": {
               "type": "linear"
             },
@@ -2100,14 +2139,19 @@
       "id": 110,
       "options": {
         "legend": {
-          "calcs": [],
+          "calcs": [
+            "lastNotNull",
+            "mean",
+            "max"
+          ],
           "displayMode": "table",
           "placement": "bottom",
           "showLegend": true
         },
         "tooltip": {
           "mode": "multi",
-          "sort": "none"
+          "sort": "none",
+          "hideZeros": false
         }
       },
       "targets": [
@@ -2183,9 +2227,9 @@
             "mode": "palette-classic"
           },
           "custom": {
-            "axisBorderShow": false,
+            "axisBorderShow": true,
             "axisCenteredZero": false,
-            "axisColorMode": "text",
+            "axisColorMode": "series",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
@@ -2198,9 +2242,9 @@
               "viz": false
             },
             "insertNulls": false,
-            "lineInterpolation": "linear",
-            "lineWidth": 2,
-            "pointSize": 4,
+            "lineInterpolation": "smooth",
+            "lineWidth": 3,
+            "pointSize": 5,
             "scaleDistribution": {
               "type": "linear"
             },
@@ -2241,14 +2285,19 @@
       "id": 105,
       "options": {
         "legend": {
-          "calcs": [],
+          "calcs": [
+            "lastNotNull",
+            "mean",
+            "max"
+          ],
           "displayMode": "table",
           "placement": "bottom",
           "showLegend": true
         },
         "tooltip": {
           "mode": "multi",
-          "sort": "none"
+          "sort": "none",
+          "hideZeros": false
         }
       },
       "targets": [
@@ -2347,9 +2396,8 @@
       },
       "id": 950,
       "panels": [],
-      "title": "vLLM Cache And Scheduling",
-      "type": "row",
-      "transparent": true
+      "title": "CACHE / SCHEDULER SIGNALS",
+      "type": "row"
     },
     {
       "datasource": {
@@ -2362,9 +2410,9 @@
             "mode": "palette-classic"
           },
           "custom": {
-            "axisBorderShow": false,
+            "axisBorderShow": true,
             "axisCenteredZero": false,
-            "axisColorMode": "text",
+            "axisColorMode": "series",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
@@ -2377,9 +2425,9 @@
               "viz": false
             },
             "insertNulls": false,
-            "lineInterpolation": "linear",
-            "lineWidth": 2,
-            "pointSize": 4,
+            "lineInterpolation": "smooth",
+            "lineWidth": 3,
+            "pointSize": 5,
             "scaleDistribution": {
               "type": "linear"
             },
@@ -2417,19 +2465,18 @@
       "options": {
         "legend": {
           "calcs": [
-            "min",
+            "lastNotNull",
             "mean",
-            "max",
-            "lastNotNull"
+            "max"
           ],
           "displayMode": "table",
           "placement": "bottom",
           "showLegend": true
         },
         "tooltip": {
-          "hideZeros": false,
           "mode": "multi",
-          "sort": "none"
+          "sort": "none",
+          "hideZeros": false
         }
       },
       "targets": [
@@ -2460,9 +2507,9 @@
             "mode": "palette-classic"
           },
           "custom": {
-            "axisBorderShow": false,
+            "axisBorderShow": true,
             "axisCenteredZero": false,
-            "axisColorMode": "text",
+            "axisColorMode": "series",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
@@ -2475,9 +2522,9 @@
               "viz": false
             },
             "insertNulls": false,
-            "lineInterpolation": "linear",
-            "lineWidth": 2,
-            "pointSize": 4,
+            "lineInterpolation": "smooth",
+            "lineWidth": 3,
+            "pointSize": 5,
             "scaleDistribution": {
               "type": "linear"
             },
@@ -2515,19 +2562,18 @@
       "options": {
         "legend": {
           "calcs": [
-            "min",
+            "lastNotNull",
             "mean",
-            "max",
-            "lastNotNull"
+            "max"
           ],
           "displayMode": "table",
           "placement": "bottom",
           "showLegend": true
         },
         "tooltip": {
-          "hideZeros": false,
           "mode": "multi",
-          "sort": "none"
+          "sort": "none",
+          "hideZeros": false
         }
       },
       "targets": [
@@ -2569,9 +2615,9 @@
             "mode": "palette-classic"
           },
           "custom": {
-            "axisBorderShow": false,
+            "axisBorderShow": true,
             "axisCenteredZero": false,
-            "axisColorMode": "text",
+            "axisColorMode": "series",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
@@ -2584,9 +2630,9 @@
               "viz": false
             },
             "insertNulls": false,
-            "lineInterpolation": "linear",
-            "lineWidth": 2,
-            "pointSize": 4,
+            "lineInterpolation": "smooth",
+            "lineWidth": 3,
+            "pointSize": 5,
             "scaleDistribution": {
               "type": "linear"
             },
@@ -2624,19 +2670,18 @@
       "options": {
         "legend": {
           "calcs": [
-            "min",
+            "lastNotNull",
             "mean",
-            "max",
-            "lastNotNull"
+            "max"
           ],
           "displayMode": "table",
           "placement": "bottom",
           "showLegend": true
         },
         "tooltip": {
-          "hideZeros": false,
           "mode": "multi",
-          "sort": "none"
+          "sort": "none",
+          "hideZeros": false
         }
       },
       "targets": [
@@ -2689,9 +2734,9 @@
             "mode": "palette-classic"
           },
           "custom": {
-            "axisBorderShow": false,
+            "axisBorderShow": true,
             "axisCenteredZero": false,
-            "axisColorMode": "text",
+            "axisColorMode": "series",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
@@ -2704,9 +2749,9 @@
               "viz": false
             },
             "insertNulls": false,
-            "lineInterpolation": "linear",
-            "lineWidth": 2,
-            "pointSize": 4,
+            "lineInterpolation": "smooth",
+            "lineWidth": 3,
+            "pointSize": 5,
             "scaleDistribution": {
               "type": "linear"
             },
@@ -2744,19 +2789,18 @@
       "options": {
         "legend": {
           "calcs": [
-            "min",
+            "lastNotNull",
             "mean",
-            "max",
-            "lastNotNull"
+            "max"
           ],
           "displayMode": "table",
           "placement": "bottom",
           "showLegend": true
         },
         "tooltip": {
-          "hideZeros": false,
           "mode": "multi",
-          "sort": "none"
+          "sort": "none",
+          "hideZeros": false
         }
       },
       "targets": [
@@ -2785,7 +2829,9 @@
     "dcgm",
     "gpu",
     "neon",
-    "rhoai"
+    "rhoai",
+    "ultra",
+    "vllm"
   ],
   "templating": {
     "list": [
@@ -2899,8 +2945,8 @@
   },
   "timepicker": {},
   "timezone": "",
-  "title": "RHOAI vLLM + NVIDIA DCGM - Cyberpunk Beta",
-  "uid": "rhoai-dcgm-cyberpunk-beta",
+  "title": "RHOAI vLLM + NVIDIA DCGM - Cyberpunk Ultra Beta",
+  "uid": "rhoai-dcgm-cyberpunk-ultra-beta",
   "version": 1,
   "weekStart": "",
   "style": "dark"
